@@ -7,14 +7,12 @@ import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs/internal/Observable';
 
 import { BillingAddressActionCreator, BillingAddressRequestSender } from '../../../billing';
-import {
-    createCheckoutStore,
+import { createCheckoutStore,
     CheckoutActionCreator,
+    CheckoutActionType,
     CheckoutRequestSender,
     CheckoutStore,
-    CheckoutValidator,
-    CheckoutActionType
-} from '../../../checkout';
+    CheckoutValidator } from '../../../checkout';
 import { getCheckout, getCheckoutStoreState } from '../../../checkout/checkouts.mock';
 import { InvalidArgumentError, MissingDataError } from '../../../common/error/errors';
 import { ConfigActionCreator, ConfigRequestSender } from '../../../config';
