@@ -98,7 +98,9 @@ describe('BraintreeVenmoButtonStrategy', () => {
     afterEach(() => {
         jest.clearAllMocks();
 
-        document.body.removeChild(venmoButtonElement);
+        if (document.getElementById(defaultContainerId)) {
+            document.body.removeChild(venmoButtonElement);
+        }
     });
 
     it('creates an instance of the braintree venmo checkout button strategy', () => {

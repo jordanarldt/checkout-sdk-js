@@ -83,14 +83,17 @@ export default class BraintreeVenmoButtonStrategy implements CheckoutButtonStrat
     }
 
     private _handleInitializationVenmoError(error: BraintreeError | UnsupportedBrowserError, containerId: string): void {
-        this._hideVenmoContainer(containerId);
+        this._removeVenmoContainer(containerId);
 
         return this._onError(error);
     }
 
-    private _hideVenmoContainer(containerId: string): void {
+    private _removeVenmoContainer(containerId: string): void {
         const buttonContainer = document.getElementById(containerId);
-        Object.assign(buttonContainer?.style, { display: 'none' });
+
+        if (buttonContainer) {
+            buttonContainer.remove();
+        }
     }
 
     private _renderVenmoButton(braintreeVenmoCheckout: BraintreeVenmoCheckout, containerId: string): void {
