@@ -60,6 +60,9 @@ export function getConfig(): Config {
                 thousandsSeparator: ',',
             },
             displayDateFormat: 'dd/MM/yyyy',
+            displaySettings: {
+                restrictProductPrice: false,
+            },
             inputDateFormat: 'dd/MM/yyyy',
             formFields: getFormFields(),
             links: {
