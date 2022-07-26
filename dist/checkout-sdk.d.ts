@@ -4320,6 +4320,10 @@ declare interface Discount {
     discountedAmount: number;
 }
 
+declare interface DisplaySettings {
+    restrictProductPrice: boolean;
+}
+
 declare class EmbeddedCheckout {
     private _iframeCreator;
     private _messageListener;
@@ -6615,6 +6619,7 @@ declare interface StoreConfig {
     checkoutSettings: CheckoutSettings;
     currency: StoreCurrency;
     displayDateFormat: string;
+    displaySettings: DisplaySettings;
     inputDateFormat: string;
     /**
      * @deprecated Please use instead the data selectors
